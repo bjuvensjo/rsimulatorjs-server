@@ -1,0 +1,31 @@
+{
+    "name": "rsimulatorjs-server",
+    "version": "0.3.2",
+    "author": "Magnus Bjuvensjö <bjuvensjo@gmail.com>",
+    "description": "rsimulatorjs-server",
+    "contributors": [ 
+        {
+            "name": "Magnus Bjuvensjö",
+            "email": "bjuvensjo@gmail.com"
+        } 
+    ],
+    "main": "./src/module",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bjuvensjo/rsimulatorjs-server.git"
+    },
+    "dependencies" : {
+        "http-proxy": "~v0.10.2",
+        "rsimulatorjs-http": "~0.3.2",
+        "rsimulatorjs-log": "~0.3.2"
+    },
+    "devDependencies": {
+        "buster":  "0.5.x"
+    },
+    "license": "BSD",
+    "engines": {
+        "node": ">=0.6"
+    }
+}
+
+
