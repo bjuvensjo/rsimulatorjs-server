@@ -17,6 +17,16 @@ module.exports = (function () {
     //         useRootRelativePath: true
     //     },
     //     proxyConfig: {
+    //         middleware: [
+    //             function (req, res, next) {
+    //                 res.setHeader('ErrorCode', 100);
+    //                 next();
+    //             },
+    //             function (req, res, next) {
+    //                 next();
+    //                 res.setHeader('ErrorMessage', 'errorMessage');
+    //             }
+    //         ],
     //         port: 8000,
     //         options: {
     //             pathnameOnly: true,
@@ -28,6 +38,7 @@ module.exports = (function () {
     //     }
     // };
     return function (options) {
+        var proxyArguments;
         
         // Create a http server, i.e. the one running the httpSimulator
         http.createServer((function () {
@@ -46,7 +57,10 @@ module.exports = (function () {
 
         // If configured, create a proxy server
         if (options.proxyConfig) {
-            httpProxy.createServer(options.proxyConfig.options).listen(options.proxyConfig.port);
+            proxyArguments = options.proxyConfig.middleware || [];
+            proxyArguments.push(options.proxyConfig.options);
+
+            httpProxy.createServer.apply(undefined, proxyArguments).listen(options.proxyConfig.port);
         };
         
     };

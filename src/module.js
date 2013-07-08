@@ -11,6 +11,16 @@ module.exports = (function () {
     //         useRootRelativePath: true
     //     },
     //     proxyConfig: {
+    //         middleware: [
+    //             function (req, res, next) {
+    //                 res.setHeader('ErrorCode', 100);
+    //                 next();
+    //             },
+    //             function (req, res, next) {
+    //                 next();
+    //                 res.setHeader('ErrorMessage', 'errorMessage');
+    //             }
+    //         ],
     //         port: 8000,
     //         options: {
     //             pathnameOnly: true,

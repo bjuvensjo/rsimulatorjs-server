@@ -22,6 +22,8 @@ var assert = require('assert');
         res.setEncoding('UTF-8');
         res.on('data', function (chunk) {
             assert.equal(chunk, requestBody);
+            assert.equal(res.headers.errorcode, '100');
+            assert.equal(res.headers.errormessage, 'errorMessage');
         });
     });
 
