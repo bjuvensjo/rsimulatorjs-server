@@ -41,7 +41,7 @@ module.exports = (function () {
     return function (options) {
         var proxyArguments;
 
-        log.setGlobalLogLevel(options.logLevel || 'debug');
+        log.setGlobalLogLevel(options.logLevel);
 
         // Create a http server, i.e. the one running the httpSimulator
         http.createServer((function () {
@@ -49,7 +49,8 @@ module.exports = (function () {
             // Create the httpSimulator
             var theHttpSimulator = httpSimulator.create({
                 rootPath: options.simulatorConfig.rootPath,
-                useRootRelativePath: options.simulatorConfig.useRootRelativePath || true
+                useRootRelativePath: options.simulatorConfig.useRootRelativePath || true,
+                logLevel: options.logLevel
             });
 
             return function (request, response) {
