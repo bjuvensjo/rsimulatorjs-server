@@ -16,8 +16,8 @@
     },
     "dependencies" : {
         "http-proxy": "~v0.10.2",
-        "rsimulatorjs-http": "~0.4.0",
-        "rsimulatorjs-log": "~0.4.0"
+        "rsimulatorjs-http": "http://cuso.edb.se/stash/scm/njsp/rsimulatorjs-http.git#~0.4.0",
+        "rsimulatorjs-log": "http://cuso.edb.se/stash/scm/njsp/rsimulatorjs-log.git#~0.4.0"
     },
     "devDependencies": {
         "buster":  "0.5.x"
