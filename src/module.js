@@ -29,7 +29,8 @@ module.exports = (function () {
     //                 '': '127.0.0.1:9001'
     //             }
     //         }
-    //     }
+    //     },
+    //     logLevel: 'debug' (default) | 'info' | 'error'
     // };
     return httpServer;
 
