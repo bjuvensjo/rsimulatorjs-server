@@ -1,6 +1,6 @@
 {
     "name": "rsimulatorjs-server",
-    "version": "0.3.9",
+    "version": "0.3.10",
     "author": "Magnus Bjuvensjö <bjuvensjo@gmail.com>",
     "description": "rsimulatorjs-server",
     "contributors": [ 
@@ -16,7 +16,7 @@
     },
     "dependencies" : {
         "http-proxy": "~v0.10.2",
-        "rsimulatorjs-http": "~0.3.8",
+        "rsimulatorjs-http": "~0.3.10",
         "rsimulatorjs-log": "~0.3.2"
     },
     "devDependencies": {
