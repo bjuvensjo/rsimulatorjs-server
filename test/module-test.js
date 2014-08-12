@@ -27,7 +27,7 @@ var options = {
             }
         }
     },
-    logLevel: 'info'
+    logLevel: 'debug'
 };
 
 module(options);
