@@ -65,7 +65,7 @@ module.exports = (function () {
             proxyArguments.push(options.proxyConfig.options);
 
             httpProxy.createServer.apply(undefined, proxyArguments).listen(options.proxyConfig.port);
-        };
+        }
         
     };
 

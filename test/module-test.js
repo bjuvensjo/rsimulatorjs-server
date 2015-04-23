@@ -1,33 +1,26 @@
-var module = require(__filename.replace(/test/, 'src').replace(/-test.js$/, '.js'));
+var expect = require("expect.js");
+var request = require('sync-request');
 
+describe("module", function () {
 
-var options = {
-    simulatorConfig: {
-        port: 9000,
-        rootPath: '../test/testFiles',
-        useRootRelativePath: true
-    },
-    proxyConfig: {
-        middleware: [
-            function (req, res, next) {
-                res.setHeader('ErrorCode', 100);
-                next();
+    it("should work", function () {
+        var requestBody = '{"foo":"fox","bar":"bar"}';
+
+        var options = {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
             },
-            function (req, res, next) {
-                next();
-                res.setHeader('ErrorMessage', 'errorMessage');
-            }
-        ],
-        port: 8000,
-        options: {
-            pathnameOnly: true,
-            router: {
-                '/service': '127.0.0.1:9000',
-                '': '127.0.0.1:9001'
-            }
-        }
-    },
-    logLevel: 'debug'
-};
+            body: requestBody
+        };
 
-module(options);
+        var response = request('POST', 'http://localhost:8000/service/account', options);
+
+        expect(response.statusCode).to.be(200);
+
+        expect(response.getBody('utf-8')).to.be(requestBody);
+        expect(response.headers.errorcode).to.be('100');
+        expect(response.headers.errormessage).to.be('errorMessage');
+
+    });
+
+});

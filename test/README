@@ -1,4 +1,0 @@
-Test through:
-
-1. In one Terminal: node module-test.js 
-2. In another Terminal: node client.js

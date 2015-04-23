@@ -1,28 +1,40 @@
 {
     "name": "rsimulatorjs-server",
-    "version": "0.5.0",
+    "version": "0.6.0",
     "author": "Magnus Bjuvensjö <bjuvensjo@gmail.com>",
     "description": "rsimulatorjs-server",
-    "contributors": [ 
+    "contributors": [
         {
             "name": "Magnus Bjuvensjö",
             "email": "bjuvensjo@gmail.com"
-        } 
+        }
     ],
     "main": "./src/module",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bjuvensjo/rsimulatorjs-server.git"
-    },
-    "dependencies" : {
+    "dependencies": {
         "http-proxy": "~v0.10.2",
         "rsimulatorjs-http": "~0.5.0",
         "rsimulatorjs-log": "~0.5.0"
+    },
+    "devDependencies": {
+        "expect.js": "^0.3.1",
+        "gulp": "^3.8.10",
+        "gulp-jshint": "^1.9.2",
+        "gulp-mocha": "^2.0.0",
+        "jshint-stylish": "^1.0.0",
+        "sync-request": "^2.0.1"
+    },
+    "scripts": {
+        "prestart": "npm install",
+        "start": "gulp default",
+        "pretest": "npm install",
+        "test": "gulp test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bjuvensjo/rsimulatorjs-server.git"
     },
     "license": "BSD",
     "engines": {
         "node": ">=0.6"
     }
 }
-
-
